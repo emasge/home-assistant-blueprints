@@ -38,8 +38,7 @@ variables:
   temperature_sensor: !input temperature_sensor
 trigger:
   - platform: template
-    value_template: >
-      {{ (state_attr(trv, 'current_temperature') | float - states(temperature_sensor) | float) | abs > 0.5 }}
+    value_template: '{{ (state_attr(trv, 'current_temperature') | float - states(temperature_sensor) | float) | abs > 0.5 }}'
 condition:
   - condition: template
     value_template: '{{ state_attr(trv, "current_temperature") != None }}'
