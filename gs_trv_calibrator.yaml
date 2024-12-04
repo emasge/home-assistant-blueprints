@@ -62,8 +62,8 @@ triggers:
       hours: 0
       minutes: 5
       seconds: 0
-    above: -0.5
-    below: -2
+    above: -2
+    below: -0.5
 
 condition:
   - condition: template
