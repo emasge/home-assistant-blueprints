@@ -47,8 +47,7 @@ variables:
 
 triggers:
   - trigger: numeric_state
-    entity_id:
-      - !input temperature_difference
+    entity_id: !input temperature_difference
     for:
       hours: 0
       minutes: 5
@@ -56,14 +55,13 @@ triggers:
     above: 0.5
     below: 2
   - trigger: numeric_state
-    entity_id:
-      - !input temperature_difference
+    entity_id: !input temperature_difference
     for:
       hours: 0
       minutes: 5
       seconds: 0
-    above: -2
-    below: -0.5
+    above: -0.5
+    below: -2
 
 condition:
   - condition: template
