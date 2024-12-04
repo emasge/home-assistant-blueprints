@@ -45,10 +45,16 @@ variables:
   trv_calibration_number: !input trv_calibration_number
   temperature_sensor: !input temperature_sensor                                
 
-trigger:
-  - platform: numeric_state 
-    entity_id: !input temperature_difference 
+triggers:
+  - trigger: numeric_state
+    entity_id:
+      - !input temperature_difference
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
     above: 0.5
+    below: 0
 
 condition:
   - condition: template
